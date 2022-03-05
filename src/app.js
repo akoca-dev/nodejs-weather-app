@@ -25,6 +25,8 @@ const publicDirPath = path.join(__dirname, '../public')
 const viewsDirPath = path.join(__dirname, VIEWS_DIR)
 const partialssDirPath = path.join(__dirname, PARTIALS_DIR)
 
+const port = process.env.PORT || 3000
+
 const app = express()
 app.set(VIEW_ENGINE, VIEW_ENGINE_HBS)
 app.set(VIEWS, viewsDirPath)
@@ -114,6 +116,6 @@ app.get(ROUTES_FALLBACK, (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server started at 3000')
+app.listen(port, () => {
+    console.log(`Server started at ${port}`)
 })
